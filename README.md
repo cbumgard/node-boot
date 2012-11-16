@@ -8,9 +8,9 @@ __node-boot__ is a starting point for developing a web application based on a pr
 - [express]
 - [jade view templates]
 - [Twitter Bootstrap]
-- [MongoDB] & [Mongoose] (app data)
-- [Redis] (sessions)
-- [Winston] (async logging)
+- [MongoDB] & [Mongoose]
+- [Redis]
+- [Winston]
 - [Passport OAuth]
 
 [express]: http://expressjs.com/
@@ -19,8 +19,8 @@ __node-boot__ is a starting point for developing a web application based on a pr
 [MongoDB]: http://www.mongodb.org/
 [Mongoose]: http://mongoosejs.com/
 [Redis]: http://redis.io/
-[Winston]: https://github.com/flatiron/winston'
-[Passport OAuth]: http://passportjs.org/'
+[Winston]: https://github.com/flatiron/winston
+[Passport OAuth]: http://passportjs.org/
 
 Why You Should Use It
 =====================
