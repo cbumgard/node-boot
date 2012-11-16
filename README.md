@@ -36,10 +36,10 @@ Fork __node-boot__ at https://github.com/cbumgard/node-boot
 
 Make sure you have the latest stable version of node.js and npm installed. Then just:
 
-`$ git clone https://github.com/cbumgard/node-boot`
-`$ cd node-boot/`
-`$ npm install`
-`$ node app.js`
+1. `$ git clone https://github.com/cbumgard/node-boot`
+2. `$ cd node-boot/`
+3. `$ npm install`
+4. `$ node app.js`
 
 You should now be able to connect to http://localhost:8000/ and see a page just like this one.
 
