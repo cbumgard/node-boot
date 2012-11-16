@@ -1,0 +1,34 @@
+.navbar.navbar-inverse.navbar-fixed-top.scroll
+  include flash-messages
+  .navbar-inner
+    .container
+      //- Responsive Navbar Part 1: Button for triggering responsive navbar (not covered in tutorial). Include responsive CSS to utilize. 
+      a.btn.btn-navbar(data-toggle='collapse', data-target='.nav-collapse')
+        span.icon-bar
+        span.icon-bar
+        span.icon-bar
+
+      block brand
+
+      //- Responsive Navbar Part 2: Place all navbar contents you want collapsed withing .navbar-collapse.collapse. 
+      #topbar
+        ul.nav.nav-collapse.collapse            
+          block menu-items
+
+          //- Read about Bootstrap dropdowns at http://twitter.github.com/bootstrap/javascript.html#dropdowns 
+          if (user)                  
+            li.dropdown
+              a.dropdown-toggle(href='#', data-toggle='dropdown')                      
+                | #{user.first_name}
+                | &nbsp;
+                b.caret                      
+              ul.pull-right.dropdown-menu
+                li
+                  a(href='/logout') Log Out                                        
+      if (user)       
+        img.img-rounded(src=user.photo_url)                
+      else
+        a#nav-login.pull-right.btn.btn-primary.btn-small(href='#login-modal', data-toggle='modal') Login
+
+//- The login modal dialog that is linked to by the #nav-login link above:
+include login-modal

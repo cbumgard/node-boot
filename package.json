@@ -1,0 +1,21 @@
+{
+  "name": "node-boot",
+  "version": "0.0.1",
+  "dependencies": {
+      "express": ">= 0.0.1"
+    , "jade": ">= 0.0.1"
+    , "passport": ">= 0.1.x"
+    , "connect-flash": ">= 0.1.x"
+    , "mongoose": ">= 3.4.0"
+    , "async": ">= 0.1.x"
+    , "underscore": ">= 1.4.2"
+    , "winston": ">= 0.6.2"
+    , "winston-mongodb": ">= 0.4.0"
+    , "connect-redis": ">= 1.4.5"
+    , "cluster": ">= 0.7.7"
+  },
+  "engines": {
+    "node": "0.8.x",
+    "npm": "1.1.x"
+  }
+}

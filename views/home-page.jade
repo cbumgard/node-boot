@@ -1,0 +1,82 @@
+extends layout
+
+append stylesheets
+  link(href='/assets/css/home-page.css', rel='stylesheet')
+  link(href='/assets/css/carousel.css', rel='stylesheet')
+
+append javascripts
+  script(src='/assets/js/home-page.js')
+
+append header
+  include includes/home-page-nav
+
+block content
+  a(href='https://github.com/cbumgard/node-boot')
+    img.pull-right(src='https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png', alt='Fork me on GitHub')
+  .container
+    #home
+    #what.featurette
+      h2.featurette-heading
+        | What is 
+        strong #{title}?
+      p.lead
+        strong #{title} 
+        | is a starting point for developing a web application based on a proven node.js stack: 
+        ul
+          li.lead 
+            a(href='http://expressjs.com/') express
+          li.lead
+            a(href='http://jade-lang.com/') jade view templates
+          li.lead
+            a(href='http://twitter.github.com/bootstrap/') Twitter Bootstrap
+          li.lead 
+            a(href='http://www.mongodb.org/') MongoDB 
+            | & 
+            a(href='http://mongoosejs.com/') Mongoose 
+            | (app data)
+          li.lead 
+            a(href='http://redis.io/') Redis 
+            | (sessions)
+          li.lead 
+            a(href='https://github.com/flatiron/winston') Winston 
+            | (async logging)
+          li.lead 
+            a(href='http://passportjs.org/') Passport OAuth
+    hr.featurette-divider
+    #why.featurette
+      h2.featurette-heading
+        | Why You Should Use It
+      p.lead
+        strong #{title} 
+        | is a starting point providing a sensible, configurable, and customizable set of choices.
+        | You get a turnkey web app that provides common patterns such as environment-specific configuration files,
+        | clustering for multiple cores, SSL certificate setup, database connections, logging transports,
+        | and caching and compression of content.
+      p.lead
+        | The experience of building a production-ready, deployable web application 
+        | involves making many choices: which technologies, what configuration settings, best practices, etc.
+        | While there is no one right set of choices, these are ones I have used in my own production 
+        | web application and have found to be not only pragmatic and scalable, but a pleasure to work with.
+        | My hope is this might help you get off the ground fast so you can focus on building that awesome idea
+        | you've got in your head.
+    hr.featurette-divider
+    #how.featurette
+      h2.featurette-heading
+        | How To Start
+      p.lead
+        | Fork 
+        strong #{title} 
+        | at 
+        a(href='https://github.com/cbumgard/node-boot') https://github.com/cbumgard/node-boot 
+      p.lead
+        | Make sure you have the latest stable version of node.js and npm installed. Then just:
+        script(src='https://gist.github.com/4083786.js')
+      p.lead
+        | You should now be able to connect to 
+        a(href='http://localhost:8000/') http://localhost:8000/ 
+        | and see a page just like this one.
+      p.lead
+        | And now build your awesome web app! Please feel free to submit pull requests and contact me at 
+        a(href='mailto:cbumgard@gmail.com', target='_blank') cbumgard@gmail.com
+
+    hr.featurette-divider
