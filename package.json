@@ -1,6 +1,19 @@
 {
   "name": "node-boot",
-  "version": "0.0.1",
+  "description": "node-boot is a starting point for developing a web application based on a proven node.js stack",
+  "author": "Chris Bumgardner <cbumgard@gmail.com>",
+  "version": "0.1.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cbumgard/node-boot"
+  },  
+  "homepage": "http://node-boot.herokuapp.com/",
+  "licenses": [
+    {
+      "type": "MIT", 
+      "url": "https://github.com/cbumgard/node-boot/blob/master/LICENSE"
+    }
+  ],  
   "dependencies": {
       "express": ">= 0.0.1"
     , "jade": ">= 0.0.1"
