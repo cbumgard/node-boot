@@ -1,11 +1,13 @@
 var logger = require('winston');
 
-exports.root = function(req, res) {
-  res.render('home-page');
-}
+module.exports = function(app) {
+  app.get('/', function(req, res) {
+    res.render('home-page');
+  });
 
-exports.logout = function(req, res) {
-  logger.info('Logging out user');
-  req.logOut();
-  res.redirect('/');
+  app.get('/logout', function(req, res) {
+    logger.info('Logging out user ' + req.user.username);
+    req.logOut();
+    res.redirect('/');
+  });
 }

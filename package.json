@@ -5,6 +5,8 @@
       "express": ">= 0.0.1"
     , "jade": ">= 0.0.1"
     , "passport": ">= 0.1.x"
+    , "passport-facebook": ">= 0.1.x"
+    , "passport-twitter": ">= 0.1.x"    
     , "connect-flash": ">= 0.1.x"
     , "mongoose": ">= 3.4.0"
     , "async": ">= 0.1.x"

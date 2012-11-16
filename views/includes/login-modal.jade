@@ -6,6 +6,16 @@
     .container.span6
       h1 Welcome back!
       p.lead
-        | Please configure Passport strategies
+        | Please login with one of the following:
+      a.btn.btn-large.btn-primary(href='/auth/facebook')
+        i.icon.icon-facebook
+        | &nbsp;
+        | Login with Facebook
+      br
+      br
+      a.btn.btn-large.btn-primary(href='/auth/twitter')
+        i.icon.icon-twitter
+        | &nbsp;
+        | Login with Twitter
   .modal-footer
     button.btn(data-dismiss='modal', aria-hidden='true') Close

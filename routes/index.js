@@ -1,6 +1,19 @@
-var home_page = require('./home-page.js');
+var home_page = require('./home-page')
+  , facebook = require('./facebook')
+  , twitter = require('./twitter')
+  , passport = require('passport')
+;
 
-module.exports = function(app) {
-  app.get('/', home_page.root);
-  app.get('/logout', home_page.logout);
+passport.serializeUser(function(user, done) {  
+  done(null, user);
+});
+
+passport.deserializeUser(function(id, done) {
+  done(null, id);
+});
+
+module.exports = function(app) {  
+  home_page(app);
+  facebook(app, passport);
+  twitter(app, passport);
 }

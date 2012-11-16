@@ -22,12 +22,12 @@ exports.logging = {
 //-- Uncomment below and configure if using Passport auth strategies:
 // exports.passport = {
 //   facebook_opts: {
-//     callbackURL : '',
+//     callbackURL : 'http://localhost:8000/auth/facebook/callback',
 //     clientID: '',
 //     clientSecret: ''
 //   },
 //   twitter_opts: {
-//     callbackURL: '',
+//     callbackURL: 'http://localhost:8000/auth/twitter/callback',
 //     consumerKey: '',
 //     consumerSecret: ''    
 //   }

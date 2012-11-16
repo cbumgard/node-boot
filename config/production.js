@@ -42,12 +42,12 @@ exports.logging = {
 //-- Uncomment below and configure if using Passport auth strategies:
 // exports.passport = {
 //   facebook_opts: {
-//     callbackURL : '',
+//     callbackURL : 'http://node-boot.herokuapp.com/auth/facebook/callback',
 //     clientID: '',
 //     clientSecret: ''
 //   },
 //   twitter_opts: {
-//     callbackURL: '',
+//     callbackURL: 'http://node-boot.herokuapp.com/auth/twitter/callback',
 //     consumerKey: '',
 //     consumerSecret: ''    
 //   }
