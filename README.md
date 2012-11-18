@@ -1,4 +1,6 @@
-_Visit http://node-boot.herokuapp.com/ for a live demo!_
+Visit the node-boot dev blog [http://node-boot.blogspot.com/](http://node-boot.blogspot.com/) to see how to build your app based on node-boot.
+
+Visit http://node-boot.herokuapp.com/ for a live demo.
 
 What is __node-boot__?
 ==================
