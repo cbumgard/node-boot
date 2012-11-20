@@ -2,6 +2,7 @@ body {
   /* pad content that the fixed navbar overlaps */
   padding-top: 50px;
 }
+
 @media screen and (max-width: 979px) {
   body { 
     /* on tablets and phone, don't add extra padding since navbar will be static instead of fixed

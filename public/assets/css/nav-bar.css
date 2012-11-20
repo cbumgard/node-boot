@@ -6,3 +6,12 @@ a#nav-login {
 a#nav-tweet {
   margin-top: 12px;
 }
+
+.navbar-inner {
+  /* same as img#user-photo height so navbar stays same height with or without a photo */
+  min-height: 50px; 
+}
+
+img#user-photo {
+  height: 50px;
+}

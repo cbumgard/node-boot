@@ -25,11 +25,11 @@
               ul.pull-right.dropdown-menu
                 li
                   a(href='/logout') Log Out                                        
-      a#nav-tweet.btn.btn-small.pull-right(href='https://twitter.com/intent/tweet?hashtags=nodejs&original_referer=http%3A%2F%2Fnode-boot.herokuapp.com&source=tweetbutton&text=Check%20out%20node-boot%20on%20github!&url=http%3A%2F%2Fgithub.com%2Fcbumgard%2Fnode-boot', target='_blank')
+      a#nav-tweet.btn.btn-small.pull-right(href=tweet_url, target='_blank')
         i.icon.icon-twitter
         span &nbsp;Tweet                  
       if (user)       
-        img.img-rounded(src=user.photo_url)                
+        img#user-photo.img-rounded(src=user.photo_url)                
       else
         a#nav-login.pull-right.btn.btn-primary.btn-small(href='#login-modal', data-toggle='modal') Login
 
