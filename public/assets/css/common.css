@@ -1,6 +1,7 @@
-body {
-  /* pad content that the fixed navbar overlaps */
-  padding-top: 50px;
+body {  
+  padding-top: 50px; /* pad content that the fixed navbar overlaps */
+  padding-bottom: 40px;
+  color: #5a5a5a;
 }
 
 @media screen and (max-width: 979px) {
@@ -9,10 +10,21 @@ body {
     i.e. there isn't overlapping content to pad */
     padding-top: 0px; 
   }
+
+  .navbar {
+    margin-bottom: 0px;
+  }
 }
 
 #flash-info, #flash-success, #flash-warn, #flash-error {
   /* get rid of margin below alerts so we can put them above our fixed nav without whitespace between
   the alert message and the navbar */
   margin-bottom: 0px; 
+}
+
+.thin-heading {
+  font-size: 50px;
+  font-weight: 300;
+  line-height: 1;
+  letter-spacing: -1px;
 }
