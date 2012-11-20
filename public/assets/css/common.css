@@ -28,3 +28,7 @@ body {
   line-height: 1;
   letter-spacing: -1px;
 }
+
+.divider {
+  margin: 80px 0; /* Space out the Bootstrap <hr> more */
+}
