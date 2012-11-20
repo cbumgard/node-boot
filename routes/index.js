@@ -1,19 +1,11 @@
 var home_page = require('./home-page')
-  , facebook = require('./facebook')
-  , twitter = require('./twitter')
-  , passport = require('passport')
+  , config = require('../config')
+  , passport_auto = require('../modules/passport-auto')
 ;
-
-passport.serializeUser(function(user, done) {  
-  done(null, user);
-});
-
-passport.deserializeUser(function(id, done) {
-  done(null, id);
-});
 
 module.exports = function(app) {  
   home_page(app);
-  facebook(app, passport);
-  twitter(app, passport);
+  // Auto-mount routes for various 3rd party OAuth services
+  // that support Passport, e.g. Facebook, Twitter, GitHub:
+  passport_auto(app, config.passport);
 }

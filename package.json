@@ -20,6 +20,7 @@
     , "passport": ">= 0.1.x"
     , "passport-facebook": ">= 0.1.x"
     , "passport-twitter": ">= 0.1.x"    
+    , "passport-github": ">= 0.1.3"        
     , "connect-flash": ">= 0.1.x"
     , "mongoose": ">= 3.4.0"
     , "async": ">= 0.1.x"
