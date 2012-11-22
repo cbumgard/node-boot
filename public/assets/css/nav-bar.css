@@ -1,4 +1,4 @@
-a#nav-login {
+a#nav-login, a#nav-logout {
   margin-top: 12px;
   margin-right: 20px;  
 }
@@ -7,9 +7,14 @@ a#nav-tweet {
   margin-top: 12px;
 }
 
+#user-name {
+  clear: right;
+}
 
 img#user-photo {
   height: 50px;
+  margin-left: 10px;
+  margin-right: 20px;
 }
 
 /* CUSTOMIZE THE NAVBAR
