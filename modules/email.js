@@ -21,8 +21,8 @@ module.exports = function() {
       + '<p>@nodeboot</p>',
       config.app.title, user.display_name);
     var opts = {
-      from: config.email.from,
-      to: user.email,
+      from: config.email.from_email,
+      to: user.display_name + '<' + user.email + '>',
       subject: subject,
       generateTextFromHTML: true,
       html: message
@@ -37,7 +37,7 @@ module.exports = function() {
       + '</h1><pre><code>%s</pre></code>', 
       JSON.stringify(user));
     var opts = {
-      from: config.email.from,
+      from: config.email.from_email,
       to: config.email.admin_notifyees,
       subject: subject,
       generateTextFromHTML: true,
