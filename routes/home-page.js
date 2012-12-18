@@ -19,7 +19,7 @@ module.exports = function(app) {
   });
 
   var logged_in = function(req, res, next) {
-    if (req.user) {
+    if (req.user) {   
       next();
     } else {
       req.flash('info', 'Please sign in first, thanks!');
@@ -53,7 +53,7 @@ module.exports = function(app) {
     var new_user = {};
     new_user.email = req.body.email; //TODO: Validate email address.
     new_user.created = new Date();
-    new_user.provider_id = req.user.id;
+    new_user.provider_id = req.user.provider_id;
     new_user.provider = req.user.provider;
     new_user.username = req.user.username;
     new_user.display_name = req.user.display_name;
