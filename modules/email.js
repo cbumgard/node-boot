@@ -7,16 +7,6 @@ module.exports = function() {
   // create reusable transport method (opens pool of SMTP connections)
   var smtp_transport = nodemailer.createTransport('SMTP', config.email.smtp);
 
-  var to_full_email = function(user) {
-    var has_display_name = user.profiles 
-      && user.profiles.length > 0 
-      && user.profiles[0].display_name;
-    var full_email = has_display_name 
-      ? user.profiles[0].display_name + ' <' + user.email + '>' 
-      : user.email;
-    return full_email;
-  }
-
   var send = function(opts, callback) {
     smtp_transport.sendMail(opts, callback);    
   }
@@ -29,10 +19,10 @@ module.exports = function() {
       + ' and start hacking on your own awesome project.</p>'
       + '<p>Sincerely,</p>'
       + '<p>@nodeboot</p>',
-      config.app.title, user.profiles[0].display_name);
+      config.app.title, user.display_name);
     var opts = {
       from: config.email.from,
-      to: to_full_email(user),
+      to: user.email,
       subject: subject,
       generateTextFromHTML: true,
       html: message
@@ -42,7 +32,7 @@ module.exports = function() {
 
   var send_admin_notify_new_user = function(user, callback) {
     var subject = util.format('New %s user: %s', 
-      config.app.title, to_full_email(user));
+      config.app.title, user.email);
     var message = util.format('<h1>The following user has signed up' 
       + '</h1><pre><code>%s</pre></code>', 
       JSON.stringify(user));

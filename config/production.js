@@ -50,18 +50,49 @@ exports.logging = {
 // }
 
 //-- Uncomment below and configure if using Passport auth strategies:
-// exports.passport = {
-//   facebook_opts: {
-//     callbackURL : 'http://node-boot.herokuapp.com/auth/facebook/callback',
-//     clientID: '',
-//     clientSecret: ''
-//   },
-//   twitter_opts: {
-//     callbackURL: 'http://node-boot.herokuapp.com/auth/twitter/callback',
-//     consumerKey: '',
-//     consumerSecret: ''    
-//   }
-// }
+exports.passport = {
+  //----------------------------
+  // The name of each object below should match to a valid Passport strategy / NPM module.
+  // E.g. have an object of config options below such as 'facebook: {..}' which corresponds
+  // to the 'passport-facebook' NPM module. Make sure each module is in the ./package.json file.
+  // For all Passport strategies, please refer to: https://github.com/jaredhanson/passport
+  // The following routes will be automatically mounted for each strategy configured below:
+  // /auth/<strategy≥/
+  // /auth/<strategy>/callback/
+  // Note: you must also create a photoUrl function that knows how to retrieve the URL to
+  // the user's photo if you wish it to display in the navbar along with their display name.
+  //----------------------------
+  // facebook: {
+  //   success_redir_url: '/auth/success',
+  //   failure_redir_url: '/auth/failure',        
+  //   callbackURL : 'http://localhost:8000/auth/facebook/callback',
+  //   clientID: '',
+  //   clientSecret: '',
+  //   photoUrl: function(profile) {
+  //     return 'https://graph.facebook.com/' + profile.username + '/picture?type=square&return_ssl_resources=1';
+  //   }
+  // },
+  // twitter: {
+  //   success_redir_url: '/auth/success',
+  //   failure_redir_url: '/auth/failure',        
+  //   callbackURL: 'http://localhost:8000/auth/twitter/callback',
+  //   consumerKey: '',
+  //   consumerSecret: '',
+  //   photoUrl: function(profile) {
+  //     return (profile.photos && profile.photos.length > 0) ? profile.photos[0].value : null;
+  //   }    
+  // },
+  // github: {
+  //   success_redir_url: '/auth/success',
+  //   failure_redir_url: '/auth/failure',        
+  //   callbackURL: 'http://localhost:8000/auth/github/callback',
+  //   clientID: '',
+  //   clientSecret: '',
+  //   photoUrl: function(profile) {
+  //     return (profile._json && profile._json.avatar_url) ? profile._json.avatar_url : null;
+  //   }    
+  // }  
+}
 
 exports.session = {
   secret: 'super 1337 hax!!11'
@@ -69,7 +100,7 @@ exports.session = {
 
 //-- socket.io integration:
 exports.sockets = {
-  update_interval_ms: 2000,
+  update_interval_ms: 3000,
   log_level: 1 // 3 == debug, 2 == info, 1 == warn, 0 == error
 }
 

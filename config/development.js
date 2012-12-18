@@ -43,6 +43,8 @@ exports.passport = {
   // the user's photo if you wish it to display in the navbar along with their display name.
   //----------------------------
   // facebook: {
+  //   success_redir_url: '/auth/success',
+  //   failure_redir_url: '/auth/failure',    
   //   callbackURL : 'http://localhost:8000/auth/facebook/callback',
   //   clientID: '',
   //   clientSecret: '',
@@ -51,6 +53,8 @@ exports.passport = {
   //   }
   // },
   // twitter: {
+  //   success_redir_url: '/auth/success',
+  //   failure_redir_url: '/auth/failure',        
   //   callbackURL: 'http://localhost:8000/auth/twitter/callback',
   //   consumerKey: '',
   //   consumerSecret: '',
@@ -59,6 +63,8 @@ exports.passport = {
   //   }    
   // },
   // github: {
+  //   success_redir_url: '/auth/success',
+  //   failure_redir_url: '/auth/failure',        
   //   callbackURL: 'http://localhost:8000/auth/github/callback',
   //   clientID: '',
   //   clientSecret: '',
@@ -74,7 +80,7 @@ exports.session = {
 
 //-- socket.io integration:
 exports.sockets = {
-  update_interval_ms: 2000,
+  update_interval_ms: 3000,
   log_level: 2 // 3 == debug, 2 == info, 1 == warn, 0 == error
 }
 

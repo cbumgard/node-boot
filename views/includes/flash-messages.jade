@@ -1,23 +1,27 @@
 if (flash.info)
-  #flash-info.alert.alert-info
+  #flash-server-info.alert.alert-info
     button.close(type='button', data-dismiss='alert') x
     each msg in flash.info
-      p= msg
+      span= msg
+      br
 if (flash.success)
-  #flash-success.alert.alert-success
+  #flash-server-success.alert.alert-success
     button.close(type='button', data-dismiss='alert') x
     each msg in flash.success
-      p= msg
+      span= msg
+      br
 if (flash.warn)
-  #flash-warn.alert.alert-block
+  #flash-server-warn.alert.alert-block
     button.close(type='button', data-dismiss='alert') x
     each msg in flash.warn
-      p= msg            
+      span= msg
+      br
 if (flash.error)
-  #flash-error.alert.alert-error
+  #flash-server-error.alert.alert-error
     button.close(type='button', data-dismiss='alert') x
     each msg in flash.error
-      p= msg      
+      span= msg
+      br
 #flash-client-info.client-alert.alert.alert-info.fade.in(style='display:none')
   button.close(type='button', data-dismiss='alert') x
   .content

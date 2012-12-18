@@ -1,6 +1,7 @@
 var passport = require('passport')
   , _ = require('underscore')
   , logger = require('winston')
+  , config = require('../config')
 ;
 
 module.exports = function(app, opts) {
@@ -30,7 +31,7 @@ module.exports = function(app, opts) {
     // Mount OAuth routes for each strategy:
     app.get('/auth/' + strategyName, passport.authenticate(strategyName));
     app.get('/auth/' + strategyName + '/callback',
-      passport.authenticate(strategyName, { successRedirect: '/',
-                                            failureRedirect: '/' }));      
+      passport.authenticate(strategyName, { successRedirect: strategyOpts.success_redir_url,
+                                            failureRedirect: strategyOpts.failure_redir_url }));      
   });
 }

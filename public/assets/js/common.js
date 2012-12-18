@@ -8,6 +8,11 @@ $(document).ready(function() {
     // of the navbar being larger than bootstrap expects due to the user photo.
     $.scrollTo(target, 500, {offset:-70}); 
   });   
+
+  // Hide any server generated alerts after certain amount of time:
+  window.setTimeout(function() { 
+    $('.alert[id^=flash-server]').hide('slow') 
+  }, 10000); // 10 seconds then poof
 })
 
 /**
@@ -19,4 +24,13 @@ var flash = function(level, content) {
   var alert = $('#flash-client-' + level);
   $('.content', alert).replaceWith(content);
   $(alert).show('slow');  
+}
+
+/**
+ * Hide a client-generated alert
+ * @param level   {String} One of ['info', 'success', 'warn', 'error']
+ */
+var hideFlash = function(level) {
+  var alert = $('#flash-client-' + level);  
+  $(alert).hide('slow');   
 }
