@@ -16,7 +16,7 @@ body {
   }
 }
 
-#flash-info, #flash-success, #flash-warn, #flash-error {
+.alert {
   /* get rid of margin below alerts so we can put them above our fixed nav without whitespace between
   the alert message and the navbar */
   margin-bottom: 0px; 

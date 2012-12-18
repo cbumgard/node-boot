@@ -13,6 +13,16 @@ exports.app = app = {
   cluster: true
 }
 
+exports.nav_bar = {
+  tweet: {
+    text: 'Check out @nodeboot on github!',
+    url: 'http://github.com/cbumgard/node-boot',
+    hashtags: 'nodejs',
+    original_referer: 'http://node-boot.herokuapp.com',
+    source: 'tweetbutton'
+  }
+}
+
 exports.logging = {
   // For more on express_format see http://www.senchalabs.org/connect/middleware-logger.html
   express_format: '[:date] ":method :url HTTP/:http-version" :status :res[content-length] - :response-time ms ":referrer" :remote-addr',
@@ -53,13 +63,40 @@ exports.logging = {
 //   }
 // }
 
+exports.session = {
+  secret: 'super 1337 hax!!11'
+}
+
+//-- socket.io integration:
+exports.sockets = {
+  update_interval_ms: 2000,
+  log_level: 1 // 3 == debug, 2 == info, 1 == warn, 0 == error
+}
+
+exports.static_assets = {
+  dir: '/public',
+  max_age: 86400000 // one day (60s * 60m * 24h * 1000ms)
+}
+
 //-- Uncomment below and configure once Redis available:
 // exports.redis = {
-//   session_secret: 'changeme',
 //   session_opts: {
 //     host: '',
 //     port: 9510,
 //     pass: '',
-//     prefix: 'md_sess:'
+//     prefix: 'nb_sess:'
 //   }
+// }
+
+//-- Uncomment below and configure once SendGrid (or other email service) ready:
+// exports.email = {
+//   smtp: {
+//     service: 'SendGrid',
+//     auth: {
+//       user: 'yourname@yoursite.com',
+//       pass: 'password'
+//     }
+//   },
+//   from_email: 'contact@yoursite.com',
+//   admin_notifyees: ['admin@yoursite.com']
 // }

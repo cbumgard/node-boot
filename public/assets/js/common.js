@@ -9,3 +9,14 @@ $(document).ready(function() {
     $.scrollTo(target, 500, {offset:-70}); 
   });   
 })
+
+/**
+ * Show a client-generated alert
+ * @param level   {String} One of ['info', 'success', 'warn', 'error']
+ * @param content {String} Replaces the .content div with this message. Can contain HTML.
+ */
+var flash = function(level, content) {
+  var alert = $('#flash-client-' + level);
+  $('.content', alert).replaceWith(content);
+  $(alert).show('slow');  
+}

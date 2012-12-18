@@ -18,3 +18,15 @@ if (flash.error)
     button.close(type='button', data-dismiss='alert') x
     each msg in flash.error
       p= msg      
+#flash-client-info.client-alert.alert.alert-info.fade.in(style='display:none')
+  button.close(type='button', data-dismiss='alert') x
+  .content
+#flash-client-success.client-alert.alert.alert-success.fade.in(style='display:none')
+  button.close(type='button', data-dismiss='alert') x  
+  .content
+#flash-client-warn.client-alert.alert.alert-block.fade.in(style='display:none')
+  button.close(type='button', data-dismiss='alert') x  
+  .content
+#flash-client-error.client-alert.alert.alert-error.fade.in(style='display:none')
+  button.close(type='button', data-dismiss='alert') x  
+  .content      

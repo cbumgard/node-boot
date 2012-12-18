@@ -8,7 +8,7 @@ exports.app = app = {
 
 exports.nav_bar = {
   tweet: {
-    text: 'Check out node-boot on github!',
+    text: 'Check out @nodeboot on github!',
     url: 'http://github.com/cbumgard/node-boot',
     hashtags: 'nodejs',
     original_referer: 'http://node-boot.herokuapp.com',
@@ -68,12 +68,39 @@ exports.passport = {
   // }  
 }
 
+exports.session = {
+  secret: 'super 1337 hax!!11'
+}
+
+//-- socket.io integration:
+exports.sockets = {
+  update_interval_ms: 2000,
+  log_level: 2 // 3 == debug, 2 == info, 1 == warn, 0 == error
+}
+
+exports.static_assets = {
+  dir: '/public',
+  max_age: 3600000 // one hour (60s * 60m * 1000ms)
+}
+
 //-- Uncomment below and configure once Redis available:
 // exports.redis = {
-//   session_secret: 'changeme',
 //   session_opts: {
 //     host: 'localhost',
 //     port: 6379,
-//     prefix: 'md_sess:'
+//     prefix: 'nb_sess:'
 //   }
+// }
+
+//-- Uncomment below and configure once Gmail (or other email service) ready:
+// exports.email = {
+//   smtp: {
+//     service: 'Gmail',
+//     auth: {
+//       user: 'yourname@gmail.com',
+//       pass: 'password'
+//     }
+//   },
+//   from_email: 'yourname@gmail.com',
+//   admin_notifyees: ['yourname@gmail.com']
 // }
