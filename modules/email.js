@@ -1,17 +1,34 @@
 var nodemailer = require('nodemailer')
   , util = require('util')
-  , config = require('../config');
+  , config = require('../config')
+  , logger = require('winston')
+;
 
 module.exports = function() {
-
-  // create reusable transport method (opens pool of SMTP connections)
-  var smtp_transport = nodemailer.createTransport('SMTP', config.email.smtp);
+  var smtp_transport;
+  var email_configured = config.email && config.email.smtp;
+  if (!email_configured) {
+    logger.warn('email not configured; no smtp transport created and no emails will be sent');
+  } else {
+    // create reusable transport method (opens pool of SMTP connections)
+    smtp_transport = nodemailer.createTransport('SMTP', config.email.smtp);
+  }
 
   var send = function(opts, callback) {
+    if (!email_configured) {
+      logger.warn('email not configured; not sending message');
+      callback(null, null);
+      return;
+    }    
     smtp_transport.sendMail(opts, callback);    
   }
 
   var send_welcome_new_user = function(user, callback) {
+    if (!email_configured) {
+      logger.warn('email not configured; not sending message');
+      callback(null, null);
+      return;
+    }       
     var subject = util.format('Welcome to %s!', 
       config.app.title);
     var message = util.format('<h1>Welcome to %s, %s!</h1>' 
@@ -31,6 +48,11 @@ module.exports = function() {
   }
 
   var send_admin_notify_new_user = function(user, callback) {
+    if (!email_configured) {
+      logger.warn('email not configured; not sending message');
+      callback(null, null);
+      return;
+    }       
     var subject = util.format('New %s user: %s', 
       config.app.title, user.email);
     var message = util.format('<h1>The following user has signed up' 
