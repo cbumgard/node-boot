@@ -61,7 +61,8 @@ app.configure(function() {
     res.locals.tagline = config.app.tagline;
     res.locals.user = req.user;
     res.locals.flash = req.flash();
-    res.locals.NODE_ENV = process.env.NODE_ENV
+    res.locals.NODE_ENV = process.env.NODE_ENV,
+    res.locals.config = config
     next();
   });   
   app.use(app.router);  

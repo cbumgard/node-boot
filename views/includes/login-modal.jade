@@ -4,24 +4,29 @@
     h3#loginModalLabel= title
   .modal-body
     .container.span5
-      h1.thin-heading Welcome back!
+      h1.thin-heading Welcome!
       p.lead
         | Please login with one of the following:
-      a.btn.btn-large.btn-primary(href='/auth/facebook')
-        i.icon.icon-facebook
-        | &nbsp;
-        | Login with Facebook
-      br
-      br
-      a.btn.btn-large.btn-primary(href='/auth/twitter')
-        i.icon.icon-twitter
-        | &nbsp;
-        | Login with Twitter
-      br
-      br
-      a.btn.btn-large.btn-primary(href='/auth/github')
-        i.icon-white.icon-user
-        | &nbsp;
-        | Login with GitHub
+      if (config.passport.facebook)
+        a.btn.btn-large.btn-primary(href='/auth/facebook')
+          i.icon.icon-facebook
+          | &nbsp;
+          | Login with Facebook
+        br
+        br
+      if (config.passport.twitter)        
+        a.btn.btn-large.btn-primary(href='/auth/twitter')
+          i.icon.icon-twitter
+          | &nbsp;
+          | Login with Twitter
+        br
+        br
+      if (config.passport.github)        
+        a.btn.btn-large.btn-primary(href='/auth/github')
+          i.icon-white.icon-user
+          | &nbsp;
+          | Login with GitHub
+      if (!config.passport.facebook && !config.passport.twitter && !config.passport.github)
+        h3 No Passport oAuth providers have been configured yet
   .modal-footer
     button.btn(data-dismiss='modal', aria-hidden='true') Close
