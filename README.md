@@ -10,8 +10,10 @@ __node-boot__ is a starting point for developing a web application based on a pr
 - [express]
 - [jade view templates]
 - [Twitter Bootstrap]
+- [Socket.io]
 - [MongoDB] & [Mongoose]
 - [Redis]
+- [Nodemailer]
 - [Winston]
 - [Passport OAuth]
 
