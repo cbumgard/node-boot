@@ -6,5 +6,12 @@
     "jquery.validation": "1.11.1",
     "jquery.scrollTo": "git://github.com/cbumgard/jquery.scrollTo.git#1.4.5b",
     "bootstrap": "2.3.1"
-  }
+  },
+  "exportsOverride": {
+    "jquery.validation": {
+      "./": [
+        "jquery.validate.js"
+      ]
+    }
+  }  
 }
