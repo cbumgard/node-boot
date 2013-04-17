@@ -99,7 +99,8 @@ module.exports = function(grunt) {
       prod: {
         files: [
           {expand: true, cwd: customAssetsDir + '/img/', src: ['**'], dest: './public/dist/img/', filter: 'isFile'},
-          {expand: true, cwd: customAssetsDir + '/ico/', src: ['**'], dest: './public/dist/ico/', filter: 'isFile'}
+          {expand: true, cwd: customAssetsDir + '/ico/', src: ['**'], dest: './public/dist/ico/', filter: 'isFile'},
+          {expand: true, cwd: customAssetsDir + '/fonts/', src: ['**'], dest: './public/dist/fonts/', filter: 'isFile'}
         ]
       },
       dev: {
@@ -109,7 +110,8 @@ module.exports = function(grunt) {
           {expand: true, cwd: gruntBowerDir + '/<%= pkg.name %>/', src: ['<%= pkg.name %>.js'], dest: './public/dist-dev/js/', filter: 'isFile'},
           {expand: true, cwd: gruntBowerDir + '/<%= pkg.name %>/', src: ['<%= pkg.name %>.css'], dest: './public/dist-dev/css/', filter: 'isFile'},          
           {expand: true, cwd: customAssetsDir + '/img/', src: ['**'], dest: './public/dist-dev/img/', filter: 'isFile'},
-          {expand: true, cwd: customAssetsDir + '/ico/', src: ['**'], dest: './public/dist-dev/ico/', filter: 'isFile'}        
+          {expand: true, cwd: customAssetsDir + '/ico/', src: ['**'], dest: './public/dist-dev/ico/', filter: 'isFile'},
+          {expand: true, cwd: customAssetsDir + '/fonts/', src: ['**'], dest: './public/dist-dev/fonts/', filter: 'isFile'}
         ]
       }     
     }, 
