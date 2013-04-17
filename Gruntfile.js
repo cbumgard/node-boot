@@ -25,6 +25,14 @@ module.exports = function(grunt) {
   // Initialize Grunt configuration:
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
+    clean: {
+      prod: {
+        src: ['./public/dist/']
+      },
+      dev: {
+        src: ['./public/dist-dev/']
+      }
+    },
     bower: {
       install: {
         options: {
@@ -88,12 +96,26 @@ module.exports = function(grunt) {
       }
     },
     copy: {
-      main: {
+      prod: {
         files: [
           {expand: true, cwd: customAssetsDir + '/img/', src: ['**'], dest: './public/dist/img/', filter: 'isFile'},
           {expand: true, cwd: customAssetsDir + '/ico/', src: ['**'], dest: './public/dist/ico/', filter: 'isFile'}
         ]
-      }      
+      },
+      dev: {
+        files: [
+          {expand: true, cwd: gruntBowerDir + '/3party/', src: ['3party.js'], dest: './public/dist-dev/js/', filter: 'isFile'},
+          {expand: true, cwd: gruntBowerDir + '/3party/', src: ['3party.css'], dest: './public/dist-dev/css/', filter: 'isFile'},
+          {expand: true, cwd: gruntBowerDir + '/<%= pkg.name %>/', src: ['<%= pkg.name %>.js'], dest: './public/dist-dev/js/', filter: 'isFile'},
+          {expand: true, cwd: gruntBowerDir + '/<%= pkg.name %>/', src: ['<%= pkg.name %>.css'], dest: './public/dist-dev/css/', filter: 'isFile'},          
+          {expand: true, cwd: customAssetsDir + '/img/', src: ['**'], dest: './public/dist-dev/img/', filter: 'isFile'},
+          {expand: true, cwd: customAssetsDir + '/ico/', src: ['**'], dest: './public/dist-dev/ico/', filter: 'isFile'}        
+        ]
+      }     
+    }, 
+    watch: {
+      files: ['<%= jshint.files %>'],
+      tasks: ['dev']
     }
   });
 
@@ -103,15 +125,26 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-yui-compressor');
   grunt.loadNpmTasks('grunt-contrib-copy');
+  grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-contrib-clean');
 
   // Register the default tasks
   grunt.registerTask('default', [
+    'clean',
     'bower:install', 
     'jshint', 
     'concat',
     'min',
     'cssmin',
-    'copy'
+    'copy:prod'
     ]
   );
+
+  // Developer tasks (not for production): 
+  grunt.registerTask('dev', [
+    'clean:dev',
+    'jshint',
+    'concat',
+    'copy:dev'
+  ]);
 };

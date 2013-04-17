@@ -40,12 +40,13 @@ How To Start
 
 Fork __node-boot__ at https://github.com/cbumgard/node-boot
 
-Make sure you have the latest stable version of node.js and npm installed. Then just:
+Make sure you have the latest stable versions of __node.js__, __npm__, and __grunt__ installed. Then just:
 
-1. `$ git clone https://github.com/cbumgard/node-boot`
-2. `$ cd node-boot/`
-3. `$ npm install`
-4. `$ node app.js`
+1. `git clone https://github.com/cbumgard/node-boot`
+2. `cd node-boot/`
+3. `npm install`
+4. `grunt dev` 
+5. `node app.js`
 
 You should now be able to connect to http://localhost:8000/ and see a page just like this one.
 

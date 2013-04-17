@@ -1,4 +1,5 @@
 node_modules
 components
 grunt-bower-lib
+dist-dev
 .local*

@@ -2,7 +2,7 @@
   "name": "node-boot",
   "description": "node-boot is a starting point for developing a web application based on a proven node.js stack",
   "author": "Chris Bumgardner <cbumgard@gmail.com>",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "repository": {
     "type": "git",
     "url": "https://github.com/cbumgard/node-boot"
@@ -41,7 +41,9 @@
     "grunt-contrib-copy": "0.4.1",
     "grunt-contrib-nodeunit": "0.1.2",
     "grunt-bower-task": "0.2.0",
-    "grunt-yui-compressor": "0.2.2"
+    "grunt-yui-compressor": "0.2.2",
+    "grunt-contrib-watch": "0.3.1",
+    "grunt-contrib-clean": "0.4.1"
   },
   "engines": {
     "node": "0.8.x",

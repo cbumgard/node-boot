@@ -61,7 +61,11 @@ app.configure(function() {
     res.locals.tagline = config.app.tagline;
     res.locals.user = req.user;
     res.locals.flash = req.flash();
-    res.locals.NODE_ENV = process.env.NODE_ENV,
+    // Give views access to the node env (e.g. development or production)
+    // and default to "development" if not specified. Used for example to
+    // determine whether to show minified js/css or not if in production.
+    res.locals.NODE_ENV = process.env.NODE_ENV 
+      ? process.env.NODE_ENV : 'development',
     res.locals.config = config
     next();
   });   
@@ -85,7 +89,8 @@ var startApp = function() {
   var protocol = config.app.ssl ? 'https' : 'http';
   var port = process.env.PORT || config.app.port;
   var app_url = protocol + '://' + config.app.host + ':' + port;
-  var env = process.env.NODE_ENV ? ('[' + process.env.NODE_ENV + ']') : '';  
+  var env = process.env.NODE_ENV 
+    ? ('[' + process.env.NODE_ENV + ']') : '[development]';  
   var io;
   server.listen(port, function() {
     logger.info(config.app.title + ' listening at ' + app_url + ' ' + env);

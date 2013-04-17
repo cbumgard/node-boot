@@ -9,8 +9,12 @@ html(lang='en')
         meta(name='description', content='')
         meta(name='author', content='')
       block stylesheets
-        link(href='/dist/css/3party.min.css', rel='stylesheet')
-        link(href='/dist/css/node-boot.min.css', rel='stylesheet')
+        if (NODE_ENV === 'production')
+          link(href='/dist/css/3party.min.css', rel='stylesheet')
+          link(href='/dist/css/node-boot.min.css', rel='stylesheet')
+        else if (NODE_ENV === 'development')
+          link(href='/dist-dev/css/3party.css', rel='stylesheet')
+          link(href='/dist-dev/css/node-boot.css', rel='stylesheet')        
 
       //- HTML5 shim, for IE6-8 support of HTML5 elements
       //if lt IE 9
@@ -29,5 +33,9 @@ html(lang='en')
       include includes/footer     
     block javascripts    
       //- Placed at the end of the document so the pages load faster 
-      script(src='/dist/js/3party.min.js')
-      script(src='/dist/js/node-boot.min.js') 
+      if (NODE_ENV === 'production')
+        script(src='/dist/js/3party.min.js')
+        script(src='/dist/js/node-boot.min.js') 
+      else if (NODE_ENV === 'development')
+        script(src='/dist-dev/js/3party.js')
+        script(src='/dist-dev/js/node-boot.js')         
