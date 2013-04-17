@@ -1,0 +1,10 @@
+{
+  "name": "node-boot",
+  "version": "0.1.1",
+  "dependencies": {
+    "jquery": "1.8.0",
+    "jquery.validation": "1.11.1",
+    "jquery.scrollTo": "git://github.com/cbumgard/jquery.scrollTo.git#1.4.5b",
+    "bootstrap": "2.3.1"
+  }
+}

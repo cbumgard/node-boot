@@ -1,12 +1,12 @@
 
 .icon-facebook {
-  background-image: url("/assets/img/facebook.png");
+  background-image: url("/dist/img/facebook.png");
   background-position: center center;
   background-size: 14px;
 }
 
 .icon-twitter {
-  background-image: url("/assets/img/twitter.png");
+  background-image: url("/dist/img/twitter.png");
   background-position: center center;
   background-size: 22px;
 }

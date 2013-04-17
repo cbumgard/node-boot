@@ -1,2 +1,4 @@
 node_modules
+components
+grunt-bower-lib
 .local*
