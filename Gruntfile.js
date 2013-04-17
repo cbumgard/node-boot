@@ -143,6 +143,7 @@ module.exports = function(grunt) {
   // Developer tasks (not for production): 
   grunt.registerTask('dev', [
     'clean:dev',
+    'bower:install', 
     'jshint',
     'concat',
     'copy:dev'
