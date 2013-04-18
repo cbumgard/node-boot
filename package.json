@@ -14,6 +14,9 @@
       "url": "https://github.com/cbumgard/node-boot/blob/master/LICENSE"
     }
   ],
+  "scripts": {
+    "start": "node app.js"
+  },  
   "dependencies": {
     "express": ">= 0.0.1",
     "jade": ">= 0.0.1",

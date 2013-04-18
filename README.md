@@ -53,4 +53,11 @@ Make sure you have the latest stable versions of __node.js__, __npm__, and __gru
 
 You should now be able to connect to http://localhost:8000/ and see a page just like this one.
 
+For an even more awesome workflow that detects file changes and restarts node automatically __AND__ executes Grunt tasks to download packages and update client assets (depending on changed files) run the following commands in separate terminals:
+
+1. `grunt watch`
+2. `nodemon app.js`
+
+__NOTE:__ Make sure nodemon is installed first (e.g. `npm install -g nodemon`):
+
 And now build your awesome web app! Please feel free to submit pull requests and contact me at cbumgard@gmail.com

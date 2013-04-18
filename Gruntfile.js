@@ -66,8 +66,6 @@ module.exports = function(grunt) {
       bowerCss.push(gruntBowerDir + '/' + comp + '/*.css');
     }
   });
-  console.dir(bowerCss);
-  console.dir(bowerJs);
 
   // Initialize Grunt configuration:
   grunt.initConfig({
@@ -163,7 +161,12 @@ module.exports = function(grunt) {
       }     
     }, 
     watch: {
-      files: ['<%= jshint.files %>'],
+      files: [
+        '<%= jshint.files %>', // Gruntfile.js - TODO: apply to custom assets & node scripts
+        'package.json', // NPM modules
+        bowerRc.json,   // Bower modules
+        'assets/**' 
+      ],
       tasks: ['dev']
     }
   });
