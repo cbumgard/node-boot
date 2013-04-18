@@ -1,3 +1,11 @@
+/*!
+ * common.css
+ *
+ * Copyright 2012 Chris Bumgardner
+ * Licensed under the MIT License
+ * https://github.com/cbumgard/node-boot/blob/master/LICENSE
+ */
+
 body {  
   padding-top: 50px; /* pad content that the fixed navbar overlaps */
   padding-bottom: 40px;

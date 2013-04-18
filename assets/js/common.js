@@ -1,3 +1,11 @@
+/*!
+ * common.js
+ *
+ * Copyright 2012 Chris Bumgardner
+ * Licensed under the MIT License
+ * https://github.com/cbumgard/node-boot/blob/master/LICENSE
+ */
+
 $(document).ready(function() {  
   $('a.scrollto').bind('click', function(e) {
     e.preventDefault();

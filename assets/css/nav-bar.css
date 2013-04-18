@@ -1,3 +1,11 @@
+/*!
+ * nav-bar.css
+ *
+ * Copyright 2012 Chris Bumgardner
+ * Licensed under the MIT License
+ * https://github.com/cbumgard/node-boot/blob/master/LICENSE
+ */
+
 a#nav-login, a#nav-logout {
   margin-top: 12px;
   margin-right: 20px;  

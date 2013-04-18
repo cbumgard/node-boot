@@ -1,6 +1,6 @@
-Visit the node-boot dev blog [http://node-boot.blogspot.com/](http://node-boot.blogspot.com/) to see how to build your app based on node-boot.
+Visit [http://node-boot.herokuapp.com/](http://node-boot.herokuapp.com/) for a live demo.
 
-Visit http://node-boot.herokuapp.com/ for a live demo.
+Visit the node-boot dev blog [http://node-boot.blogspot.com/](http://node-boot.blogspot.com/) to see how to build your app based on node-boot.
 
 What is __node-boot__?
 ==================
@@ -11,11 +11,12 @@ __node-boot__ is a starting point for developing a web application based on a pr
 - [jade view templates]
 - [Twitter Bootstrap]
 - [Socket.io]
-- [MongoDB] & [Mongoose]
-- [Redis]
-- [Nodemailer]
-- [Winston]
+- [MongoDB] & [Mongoose] (app data)
+- [Redis] (sessions and more)
+- [Nodemailer] (easy email from Gmail, SendGrid, etc) 
+- [Winston] (multi-transport async logging)
 - [Passport OAuth]
+- [Grunt.js] & [Bower] (easy task running, asset pipeline, and front-end package management)
 
 [express]: http://expressjs.com/
 [jade view templates]: http://jade-lang.com/
@@ -27,6 +28,8 @@ __node-boot__ is a starting point for developing a web application based on a pr
 [Nodemailer]: http://www.nodemailer.com/
 [Winston]: https://github.com/flatiron/winston
 [Passport OAuth]: http://passportjs.org/
+[Grunt.js]: http://gruntjs.com/
+[Bower]: http://twitter.github.io/bower/
 
 Why You Should Use It
 =====================

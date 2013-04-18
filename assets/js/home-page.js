@@ -1,3 +1,11 @@
+/*!
+ * home-page.js
+ *
+ * Copyright 2012 Chris Bumgardner
+ * Licensed under the MIT License
+ * https://github.com/cbumgard/node-boot/blob/master/LICENSE
+ */
+
 $(document).ready(function() {
   var socket = io.connect(window.location.href);
   socket.on('welcome', function(data) {
