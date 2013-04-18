@@ -1,6 +1,10 @@
 var fs = require('fs');
 
 module.exports = function(grunt) {
+  // Bower filenames:
+  bowerRcFilename = '.bowerrc';
+  bowerRcFilenameDefault = 'component.json';
+
   // Define root paths to 3party assets and this app's custom assets:
   var gruntBowerDir = './grunt-bower-lib';
   var customAssetsDir = './assets';
@@ -10,7 +14,14 @@ module.exports = function(grunt) {
   // and paths relative to the Bower ("./components/")" directory.
   var bowerJs = [];
   var bowerCss = [];
-  var bowerComps = grunt.file.readJSON('component.json');
+  var bowerRc = {};
+  if (grunt.file.exists(bowerRcFilename)) {
+    bowerRc = grunt.file.readJSON(bowerRcFilename);
+  }
+  if (!bowerRc.json) {
+    bowerRc.json = bowerRcFilenameDefault;
+  }
+  var bowerComps = grunt.file.readJSON(bowerRc.json);
   String.prototype.endsWith = function(suffix) {
     return this.toLowerCase().indexOf(suffix, this.length - suffix.length) !== -1;
   };
