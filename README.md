@@ -1,8 +1,10 @@
 Visit [http://node-boot.herokuapp.com/](http://node-boot.herokuapp.com/) for a live demo.
 
+Demo based on [http://github.com/cbumgard/node-boot-demo](http://github.com/cbumgard/node-boot-demo) fork.
+
 Visit the node-boot dev blog [http://node-boot.blogspot.com/](http://node-boot.blogspot.com/) to see how to build your app based on node-boot.
 
-What is __node-boot__?
+What is node-boot?
 ==================
 
 __node-boot__ is a starting point for developing a web application based on a proven node.js stack:
@@ -60,4 +62,4 @@ For an even more awesome workflow that detects file changes and restarts node au
 
 __NOTE:__ Make sure nodemon is installed first (e.g. `npm install -g nodemon`):
 
-And now build your awesome web app! Please feel free to submit pull requests and contact me at cbumgard@gmail.com
+And now build your awesome web app! Please feel free to submit pull requests and contact me at [cbumgard@gmail.com](mailto:cbumgard@gmail.com)

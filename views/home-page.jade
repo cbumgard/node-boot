@@ -2,4 +2,9 @@ extends layout
 
 block content
   .container
-    h1 node-boot
+    h1!= title
+    p Displaying README.md (from the project root) below. 
+      | Transformed to HTML via 
+      a(href='https://github.com/evilstreak/markdown-js') markdown-js.
+    hr
+    .readme!= contents
