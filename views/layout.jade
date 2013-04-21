@@ -20,17 +20,23 @@ html(lang='en')
       //if lt IE 9
         script(src='http://html5shim.googlecode.com/svn/trunk/html5.js')
 
-      link(rel='shortcut icon', href='/dist/ico/favicon.ico')
-      link(rel='apple-touch-icon-precomposed', sizes='144x144', href='/dist/ico/apple-touch-icon-144-precomposed.png')
-      link(rel='apple-touch-icon-precomposed', sizes='114x114', href='/dist/ico/apple-touch-icon-114-precomposed.png')
-      link(rel='apple-touch-icon-precomposed', sizes='72x72', href='/dist/ico/apple-touch-icon-72-precomposed.png')
-      link(rel='apple-touch-icon-precomposed', href='/dist/ico/apple-touch-icon-57-precomposed.png')
+      if (NODE_ENV === 'production')
+        link(rel='shortcut icon', href='/dist/ico/favicon.ico')
+        link(rel='apple-touch-icon-precomposed', sizes='144x144', href='/dist/ico/apple-touch-icon-144-precomposed.png')
+        link(rel='apple-touch-icon-precomposed', sizes='114x114', href='/dist/ico/apple-touch-icon-114-precomposed.png')
+        link(rel='apple-touch-icon-precomposed', sizes='72x72', href='/dist/ico/apple-touch-icon-72-precomposed.png')
+        link(rel='apple-touch-icon-precomposed', href='/dist/ico/apple-touch-icon-57-precomposed.png')
+      else if (NODE_ENV === 'development')
+        link(rel='shortcut icon', href='/dist-dev/ico/favicon.ico')
+        link(rel='apple-touch-icon-precomposed', sizes='144x144', href='/dist-dev-dev/ico/apple-touch-icon-144-precomposed.png')
+        link(rel='apple-touch-icon-precomposed', sizes='114x114', href='/dist/ico/apple-touch-icon-114-precomposed.png')
+        link(rel='apple-touch-icon-precomposed', sizes='72x72', href='/dist-dev/ico/apple-touch-icon-72-precomposed.png')
+        link(rel='apple-touch-icon-precomposed', href='/dist-dev/ico/apple-touch-icon-57-precomposed.png')      
 
   body(data-offset='75', data-spy='scroll')
     block header   
     block content
     block footer
-      include includes/footer     
     block javascripts    
       //- Placed at the end of the document so the pages load faster 
       if (NODE_ENV === 'production')
@@ -38,4 +44,6 @@ html(lang='en')
         script(src='/dist/js/node-boot.min.js') 
       else if (NODE_ENV === 'development')
         script(src='/dist-dev/js/3party.js')
-        script(src='/dist-dev/js/node-boot.js')         
+        script(src='/dist-dev/js/node-boot.js')     
+      //- Uncomment following line for socket.io integration:
+      // script(src='/socket.io/socket.io.js')

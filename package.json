@@ -2,7 +2,7 @@
   "name": "node-boot",
   "description": "node-boot is a starting point for developing a web application based on a proven node.js stack",
   "author": "Chris Bumgardner <cbumgard@gmail.com>",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "repository": {
     "type": "git",
     "url": "https://github.com/cbumgard/node-boot"

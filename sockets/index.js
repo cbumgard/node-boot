@@ -3,6 +3,11 @@ var config = require('../config')
 ;
 
 module.exports = function(io, sessionSockets, listeners) {  
+  if (!listeners || listeners.length === 0) {
+    // No socket.io listeners specified; don't start socket.io.
+    logger.warn('No socket.io listeners; socket.io not listening for connections');
+    return;
+  }
   // Initialize socket.io to listen for long poll client requests to update feed:
   io.enable('browser client minification');  // send minified client
   io.enable('browser client etag');          // apply etag caching logic based on version number

@@ -6,16 +6,6 @@ exports.app = app = {
   cluster: false
 }
 
-exports.nav_bar = {
-  tweet: {
-    text: 'Check out @nodeboot on github!',
-    url: 'http://github.com/cbumgard/node-boot',
-    hashtags: 'nodejs',
-    original_referer: 'http://node-boot.herokuapp.com',
-    source: 'tweetbutton'
-  }
-}
-
 exports.logging = {
   // http://www.senchalabs.org/connect/middleware-logger.html
   express_format: '[:date] ":method :url HTTP/:http-version" :status :res[content-length] - :response-time ms ":referrer" :remote-addr'

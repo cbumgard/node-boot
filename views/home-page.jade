@@ -1,10 +1,5 @@
 extends layout
 
-append javascripts
-  script(src='/socket.io/socket.io.js')
-
-append header
-  include includes/node-boot-nav
-
 block content
-  include includes/node-boot-content
+  .container
+    h1 node-boot
