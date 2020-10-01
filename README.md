@@ -31,7 +31,7 @@ __node-boot__ is a starting point for developing a web application based on a pr
 [Winston]: https://github.com/flatiron/winston
 [Passport OAuth]: http://passportjs.org/
 [Grunt.js]: http://gruntjs.com/
-[Bower]: http://twitter.github.io/bower/
+[Bower]: https://bower.io/
 
 Why You Should Use It
 =====================
